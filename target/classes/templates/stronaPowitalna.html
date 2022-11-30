@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>wyborLoginRegister</title>
+</head>
+<body>
+
+<h1>Witamy w systemie zarządzania zakładem mechanicznym</h1>
+<br />
+
+<h4>zaloguj sie do swojego konta</h4>
+
+<!-- to musi byc nazwa endpointa, ktory mamy w metodzie postPostmapping -->
+<form action="zalogowany" method="post">
+
+    <label for="email">Email :</label> <br/>
+    <input type="email" name="email"/> <br/>
+
+    <label for="password">Password :</label> <br/>
+    <input type="password" name="password"/> <br/>
+
+    <label for="type">Kim jestes?</label> <br/>
+    <select name="type">
+        <option value="Wlasciciel">Wlasciciel</option>
+        <option value="Kierownik">Kierownik</option>
+        <option value="Pracownik">Pracownik</option>
+    </select>
+
+    <br/>
+    <br/>
+    <button type="submit">Potwierdz</button>
+
+
+
+</form>
+
+</body>
+
+
+
+</html>

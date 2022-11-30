@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rejestracja</title>
+</head>
+<body>
+
+<h1>Tworzenie nowego konta</h1>
+<form action="rejestracja" method="post">
+    <label for="firstname">First name :</label> <br/>
+    <input type="text" name="firstName"/> <br/>
+
+    <label for="lastname">Last name :</label> <br/>
+    <input type="text" name="lastName"/> <br/>
+
+    <label for="email">Email :</label> <br/>
+    <input type="email" name="email"/> <br/>
+
+    <label for="password">Password :</label> <br/>
+    <input type="password" name="password"/> <br/>
+
+    <label for="who">Kim jest osoba której zakładasz konto?</label> <br/>
+
+    <select name="logujeSieJako">
+        <option value="wlasciciel">Wlasciciel</option>
+        <option value="kierownik">Kierownik</option>
+        <option value="Pracownik">Pracownik</option>
+    </select>
+
+    <br/>
+    <br/>
+    <button type="submit">Potwierdz</button>
+</form>
+<br/>
+
+</body>
+</html>

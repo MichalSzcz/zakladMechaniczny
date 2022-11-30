@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>welcome</title>
+</head>
+<body>
+
+
+<h2> Witamy, jako włascicel masz możliwość utworzenia kont korownikom innych placówek oraz kont pracowniczych</h2>
+<br />
+
+
+<h1>Tworzenie nowego konta</h1>
+<form action="rejestracja" method="post">
+    <label for="firstname">First name :</label> <br/>
+    <input type="text" name="firstName"/> <br/>
+
+    <label for="lastname">Last name :</label> <br/>
+    <input type="text" name="lastName"/> <br/>
+
+    <label for="email">Email :</label> <br/>
+    <input type="email" name="email"/> <br/>
+
+    <label for="password">Password :</label> <br/>
+    <input type="password" name="password"/> <br/>
+
+    <label for="type">Kim jest osoba której zakładasz konto?</label> <br/>
+    <select name="type">
+        <option value="Kierownik">Kierownik</option>
+        <option value="Pracownik">Pracownik</option>
+    </select>
+
+    <br/>
+    <br/>
+    <button type="submit">Potwierdz</button>
+</form>
+
+<!--<h2 th:text="${firstname}">first name</h2>-->
+<!--<h2 th:text="${lastname}">last name</h2>-->
+
+</body>
+</html>

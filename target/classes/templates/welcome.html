@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!--ta linikja jest konieczna aby moc wyswietlac input -->
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>welcome</title>
+</head>
+<body>
+
+<h1> Welcome page</h1>
+
+<h2> Zarejestrowano usera o nazwie</h2>
+
+<h2 th:text="${firstname}">first name</h2>
+<h2 th:text="${lastname}">last name</h2>
+
+</body>
+</html>
