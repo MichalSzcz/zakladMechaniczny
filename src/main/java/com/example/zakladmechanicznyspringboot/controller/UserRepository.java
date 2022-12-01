@@ -2,22 +2,41 @@ package com.example.zakladmechanicznyspringboot.controller;
 
 import com.example.zakladmechanicznyspringboot.model.User;
 import com.example.zakladmechanicznyspringboot.model.UserLogging;
+import com.example.zakladmechanicznyspringboot.service.ReportService;
+import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.sql.DriverManager;
+import java.util.List;
 
 
 @Repository
 public class UserRepository {
 
     @Autowired
+
+    private UserRepository repository;
+    @Autowired
+            private ReportService service;
     JdbcTemplate jdbcTemplate;
+    private List<User> query;
 
     //pamietac o zasadzie pojedynczej odpowiedzialnosci
+
+    // Michal metoda zwracajaca zaklad
+    public List<User> getAll(){
+
+        query = jdbcTemplate.query("SELECT * FROM test", BeanPropertyRowMapper.newInstance(User.class));
+        return query;
+
+
+    }
 
 
     public boolean addUserToDb(User user){
@@ -56,4 +75,14 @@ public class UserRepository {
         }
     }
 
+
+
+   @GetMapping("/report/{format}")
+    public String generateReport(@PathVariable String format){
+       try {
+           return service.exportReport(format);
+       } catch (JRException e) {
+           throw new RuntimeException(e);
+       }
+   }
 }

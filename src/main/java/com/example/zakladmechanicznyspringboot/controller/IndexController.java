@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
 import java.util.Objects;
 
 @Controller
@@ -25,6 +26,11 @@ public class IndexController {
 
 //            return "rejestracja";
         return "stronaPowitalna";
+    }
+
+    @GetMapping("/zaklad")
+    public List<User> getAll(){
+       return userRepository.getAll();
     }
 
 
