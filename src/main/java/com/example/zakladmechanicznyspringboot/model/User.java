@@ -2,6 +2,7 @@ package com.example.zakladmechanicznyspringboot.model;
 
 import lombok.*;
 
+
 @Getter
 @Setter
 @NoArgsConstructor

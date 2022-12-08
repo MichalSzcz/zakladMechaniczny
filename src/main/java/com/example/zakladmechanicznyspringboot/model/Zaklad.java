@@ -14,4 +14,7 @@ public class Zaklad {
     Zaklad(Zaklad zaklad) {
         this.name = zaklad.getName();
     }
+
+
+
 }

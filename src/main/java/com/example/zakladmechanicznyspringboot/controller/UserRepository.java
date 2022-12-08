@@ -1,20 +1,20 @@
 package com.example.zakladmechanicznyspringboot.controller;
 
-import com.example.zakladmechanicznyspringboot.model.User;
-import com.example.zakladmechanicznyspringboot.model.UserLogging;
-import com.example.zakladmechanicznyspringboot.model.UserRegistering;
-import com.example.zakladmechanicznyspringboot.model.Zaklad;
+import com.example.zakladmechanicznyspringboot.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 @Repository
 public class UserRepository {
 
     @Autowired
+    static
     JdbcTemplate jdbcTemplate;
 
     //pamietac o zasadzie pojedynczej odpowiedzialnosci
@@ -92,6 +92,11 @@ public class UserRepository {
             System.out.println("nie udalo sie znalesc takiego usera");
             return null;
         }
+    }
+
+    public List<Pracownik> getAll(){
+        return jdbcTemplate.query("Select id, firstName * from freedb_zakladMechaniczny.Pracownik",
+                BeanPropertyRowMapper.newInstance(Pracownik.class));
     }
 
 }
